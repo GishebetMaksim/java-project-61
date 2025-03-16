@@ -2,6 +2,7 @@ plugins {
     id("java")
     application
     id("com.github.ben-manes.versions") version "0.52.0"
+    distribution
 }
 
 application {
