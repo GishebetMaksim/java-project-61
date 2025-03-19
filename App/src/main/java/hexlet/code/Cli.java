@@ -3,18 +3,13 @@ package hexlet.code;
 import  java.util.Scanner;
 
 public class Cli {
+    public  static  String name = "Bill";
     public static void greeting() {
-        System.out.println("May I have your name?");
+        System.out.print("May I have your name? ");
+        Scanner scanner = new Scanner(System.in);
+        name = scanner.nextLine();
+        System.out.println("Hello, " + name + "!");
 
-        Scanner scaner = new Scanner(System.in);
-
-        if (scaner.hasNextLine()) {
-            String name = scaner.nextLine();
-            System.out.println("Hello, " + name);
-        } else {
-            System.out.println("It can't be a name.");
-        }
-
-        scaner.close();
+        //scanner.close();
     }
 }
