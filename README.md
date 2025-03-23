@@ -5,3 +5,4 @@
 [Asciinema Even] https://asciinema.org/a/cpQArEAVKViL4HpojHq3wvvkZ
 [Asciinema Calc] https://asciinema.org/a/LO6y6Esu72gn1dOYt548QKbI9
 [Asciinema GCD] https://asciinema.org/a/Kd3fwhfe5QeFLicLFlyY9j4Hy
+[Asciinema Progression] https://asciinema.org/a/a4HS67LAPqLG4VP8SGcXRhKqh
