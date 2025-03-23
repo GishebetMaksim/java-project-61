@@ -5,6 +5,7 @@ import  java.util.Scanner;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
 
 public class App {
     public static Scanner scanner = new Scanner(System.in);
@@ -15,6 +16,7 @@ public class App {
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit");
 
         System.out.print("Your choice: ");
@@ -40,6 +42,10 @@ public class App {
                 System.out.println("Welcome to the Brain Games!");
                 Cli.greeting();
                 GCD.getGCD();
+            } else if (number == 5) {
+                System.out.println("Welcome to the Brain Games!");
+                Cli.greeting();
+                Progression.getProgression();
             }
         }
     }
