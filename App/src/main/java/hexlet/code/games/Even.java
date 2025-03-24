@@ -14,7 +14,7 @@ public class Even {
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
-        for(int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3; i++) {
             randInt = rand.nextInt(100);
             System.out.println("Question: " + randInt);
             System.out.print("Your answer: ");

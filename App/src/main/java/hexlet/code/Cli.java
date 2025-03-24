@@ -1,7 +1,5 @@
 package hexlet.code;
 
-import  java.util.Scanner;
-
 public class Cli {
     public  static  String name = "Bill";
     public static void greeting() {

@@ -19,7 +19,7 @@ public class Calc {
             multiply
         }
 
-        for(int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3; i++) {
             firstNumber = rand.nextInt(100);
             secondNumber = rand.nextInt(100);
             Action action = Action.values()[rand.nextInt(3)];
@@ -42,6 +42,8 @@ public class Calc {
                     firstNumber = rand.nextInt(maxValue - minValue + 1) + minValue;
                     secondNumber = rand.nextInt(maxValue - minValue + 1) + minValue;
                     result = firstNumber * secondNumber;
+                    break;
+                default:
                     break;
             }
             System.out.println("Question: " + firstNumber + " " + strAction + " " + secondNumber);

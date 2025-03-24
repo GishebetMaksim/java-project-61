@@ -11,7 +11,7 @@ public class GCD {
 
         Random rand = new Random();
 
-        for(int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3; i++) {
             int a = rand.nextInt(100) + 1;
             int b = rand.nextInt(100) + 1;
             int gcd = 1;
@@ -34,7 +34,7 @@ public class GCD {
                 min = remains;
             }
 
-            String answer = answer = App.scanner.next();
+            String answer = App.scanner.next();
 
             try {
                 Integer.parseInt(answer);

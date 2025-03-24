@@ -30,7 +30,7 @@ public class Progression {
             System.out.println();
             System.out.print("Your answer: ");
 
-            String answer = answer = App.scanner.next();
+            String answer = App.scanner.next();
             try {
                 Integer.parseInt(answer);
             } catch (NumberFormatException e) {
