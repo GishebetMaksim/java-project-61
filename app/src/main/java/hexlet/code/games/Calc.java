@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.app;
+import hexlet.code.brain_games;
 import hexlet.code.Cli;
 
 import  java.util.Random;
@@ -49,7 +49,7 @@ public class Calc {
             System.out.println("Question: " + firstNumber + " " + strAction + " " + secondNumber);
             //System.out.println(" = " + result);
             System.out.print("Your answer: ");
-            int answer = app.scanner.nextInt();
+            int answer = brain_games.scanner.nextInt();
 
             if (answer == result) {
                 System.out.println("Correct!");

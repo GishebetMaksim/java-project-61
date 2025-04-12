@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
-import hexlet.code.app;
+import hexlet.code.brain_games;
 
 import  java.util.Random;
 
@@ -18,7 +18,7 @@ public class Even {
             randInt = rand.nextInt(100);
             System.out.println("Question: " + randInt);
             System.out.print("Your answer: ");
-            answer = app.scanner.next();
+            answer = brain_games.scanner.next();
             if ((randInt % 2 == 0 && answer.equals("yes")) || (randInt % 2 != 0 && answer.equals("no"))) {
                 System.out.println("Correct!");
             } else {

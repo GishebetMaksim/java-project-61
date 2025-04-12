@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.app;
+import hexlet.code.brain_games;
 import hexlet.code.Cli;
 
 import java.util.Random;
@@ -34,7 +34,7 @@ public class GCD {
                 min = remains;
             }
 
-            String answer = app.scanner.next();
+            String answer = brain_games.scanner.next();
 
             try {
                 Integer.parseInt(answer);
