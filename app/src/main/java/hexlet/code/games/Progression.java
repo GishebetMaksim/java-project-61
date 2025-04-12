@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
+import hexlet.code.app;
 import hexlet.code.Cli;
 
 import java.util.Random;
@@ -30,7 +30,7 @@ public class Progression {
             System.out.println();
             System.out.print("Your answer: ");
 
-            String answer = App.scanner.next();
+            String answer = app.scanner.next();
             try {
                 Integer.parseInt(answer);
             } catch (NumberFormatException e) {
