@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.brain_games;
+import hexlet.code.app;
 import hexlet.code.Cli;
 
 public class Prime {
@@ -14,7 +14,7 @@ public class Prime {
 
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
-            String answer = brain_games.scanner.next();
+            String answer = app.scanner.next();
 
             boolean isSimple = true;
 
