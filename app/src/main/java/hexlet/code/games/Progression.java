@@ -9,9 +9,10 @@ public class Progression {
     public  static  void getProgression() {
         Random rnd = new Random();
         System.out.println("What number is missing in the progression?");
-        System.out.print("Question: ");
+
 
         for (int j = 0; j < 3; j++) {
+            System.out.print("Question: ");
             int firstNumber = rnd.nextInt(50);
             int trueAnswer = 0;
             int step = rnd.nextInt(10) + 1;
