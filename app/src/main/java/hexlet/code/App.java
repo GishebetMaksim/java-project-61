@@ -9,7 +9,7 @@ import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
 public class App {
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static Scanner getScanner() {
         return  scanner;
@@ -21,7 +21,6 @@ public class App {
     static int gCD = 4;
     static int progression = 5;
     static int prime = 6;
-    static int exit = 0;
 
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");

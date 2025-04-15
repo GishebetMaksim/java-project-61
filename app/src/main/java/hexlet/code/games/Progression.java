@@ -8,12 +8,12 @@ import java.util.Random;
 public class Progression {
     public  static  void getProgression() {
         Random rnd = new Random();
-        int iterationsCount = 3;
-        int minBoundOf1stNumber = 50;
-        int minStep = 1; // Включительно
-        int maxStep = 11; // Не включительно
-        int minStepCount = 5; // Включительно
-        int maxStepCount = 11; // Не включительно
+        final int iterationsCount = 3;
+        final int minBoundOf1stNumber = 50;
+        final int minStep = 1; // Включительно
+        final int maxStep = 11; // Не включительно
+        final int minStepCount = 5; // Включительно
+        final int maxStepCount = 11; // Не включительно
 
 
 

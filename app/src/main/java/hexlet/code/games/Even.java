@@ -10,8 +10,8 @@ public class Even {
         Random rand = new Random();
         int randInt;
         String answer;
-        int iterationsCount = 3;
-        int maxBound = 100;
+        final int iterationsCount = 3;
+        final int maxBound = 100;
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 

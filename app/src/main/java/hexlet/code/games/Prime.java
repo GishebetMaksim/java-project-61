@@ -6,9 +6,9 @@ import hexlet.code.Cli;
 public class Prime {
     public static void simpleNumber() {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        int max = 200;
-        int min = 2;
-        int iterationsCount = 3;
+        final int max = 200;
+        final int min = 2;
+        final int iterationsCount = 3;
 
         for (int j = 0; j < iterationsCount; j++) {
             int question = (int) ((Math.random() * ((max - min) + 1)) + min);

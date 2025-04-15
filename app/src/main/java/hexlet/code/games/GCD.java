@@ -11,9 +11,9 @@ public class GCD {
 
         Random rand = new Random();
 
-        var iterationsCount = 3;
-        var maxBound = 100;
-        var minBound = 1;
+        final int iterationsCount = 3;
+        final int maxBound = 100;
+        final int minBound = 1;
 
         for (int i = 0; i < iterationsCount; i++) {
             int a = rand.nextInt(maxBound) + minBound;

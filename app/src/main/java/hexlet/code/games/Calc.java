@@ -10,8 +10,8 @@ public class Calc {
         Random rand = new Random();
 
         System.out.println("What is the result of the expression?");
-        var iterationsCount = 3;
-        var maxBound = 100;
+        final var iterationsCount = 3;
+        final var maxBound = 100;
         int firstNumber;
         int secondNumber;
         int actionNumber = 3;
