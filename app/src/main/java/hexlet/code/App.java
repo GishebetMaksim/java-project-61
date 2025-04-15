@@ -8,8 +8,20 @@ import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
-public class app {
-    public static Scanner scanner = new Scanner(System.in);
+public class App {
+    private static Scanner scanner = new Scanner(System.in);
+
+    public static Scanner getScanner() {
+        return  scanner;
+    }
+
+    static int greet = 1;
+    static int even = 2;
+    static int calc = 3;
+    static int gCD = 4;
+    static int progression = 5;
+    static int prime = 6;
+    static int exit = 0;
 
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
@@ -27,28 +39,26 @@ public class app {
             int number = scanner.nextInt();
             System.out.println();
 
-//            if (number == 0) {
-//                scanner.close();
-            /*} else*/ if (number == 1) {
+            if (number == greet) {
                 System.out.println("Welcome to the Brain Games!");
                 Cli.greeting();
-            } else if (number == 2) {
+            } else if (number == even) {
                 System.out.println("Welcome to the Brain Games!");
                 Cli.greeting();
                 Even.gameEven();
-            } else if (number == 3) {
+            } else if (number == calc) {
                 System.out.println("Welcome to the Brain Games!");
                 Cli.greeting();
                 Calc.gameCalc();
-            } else if (number == 4) {
+            } else if (number == gCD) {
                 System.out.println("Welcome to the Brain Games!");
                 Cli.greeting();
                 GCD.getGCD();
-            } else if (number == 5) {
+            } else if (number == progression) {
                 System.out.println("Welcome to the Brain Games!");
                 Cli.greeting();
                 Progression.getProgression();
-            } else if (number == 6) {
+            } else if (number == prime) {
                 System.out.println("Welcome to the Brain Games!");
                 Cli.greeting();
                 Prime.simpleNumber();

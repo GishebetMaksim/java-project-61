@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.app;
+import hexlet.code.App;
 import hexlet.code.Cli;
 
 import java.util.Random;
@@ -11,9 +11,13 @@ public class GCD {
 
         Random rand = new Random();
 
-        for (int i = 0; i < 3; i++) {
-            int a = rand.nextInt(100) + 1;
-            int b = rand.nextInt(100) + 1;
+        var iterationsCount = 3;
+        var maxBound = 100;
+        var minBound = 1;
+
+        for (int i = 0; i < iterationsCount; i++) {
+            int a = rand.nextInt(maxBound) + minBound;
+            int b = rand.nextInt(maxBound) + minBound;
             int gcd = 1;
 
             System.out.println("Question: " + a + " " + b);
@@ -34,7 +38,7 @@ public class GCD {
                 min = remains;
             }
 
-            String answer = app.scanner.next();
+            String answer = App.getScanner().next();
 
             try {
                 Integer.parseInt(answer);

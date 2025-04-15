@@ -1,24 +1,25 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
-import hexlet.code.app;
+import hexlet.code.App;
 
 import  java.util.Random;
 
 public class Even {
     public static void gameEven() {
-        //Scanner scanner = new Scanner(System.in);
         Random rand = new Random();
         int randInt;
         String answer;
+        int iterationsCount = 3;
+        int maxBound = 100;
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
-        for (int i = 0; i < 3; i++) {
-            randInt = rand.nextInt(100);
+        for (int i = 0; i < iterationsCount; i++) {
+            randInt = rand.nextInt(maxBound);
             System.out.println("Question: " + randInt);
             System.out.print("Your answer: ");
-            answer = app.scanner.next();
+            answer = App.getScanner().next();
             if ((randInt % 2 == 0 && answer.equals("yes")) || (randInt % 2 != 0 && answer.equals("no"))) {
                 System.out.println("Correct!");
             } else {

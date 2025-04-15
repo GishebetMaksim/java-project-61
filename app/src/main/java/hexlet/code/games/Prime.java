@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.app;
+import hexlet.code.App;
 import hexlet.code.Cli;
 
 public class Prime {
@@ -8,13 +8,14 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         int max = 200;
         int min = 2;
+        int iterationsCount = 3;
 
-        for (int j = 0; j < 3; j++) {
+        for (int j = 0; j < iterationsCount; j++) {
             int question = (int) ((Math.random() * ((max - min) + 1)) + min);
 
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
-            String answer = app.scanner.next();
+            String answer = App.getScanner().next();
 
             boolean isSimple = true;
 

@@ -5,7 +5,7 @@ public class Cli {
     public static void greeting() {
         System.out.print("May I have your name? ");
         //Scanner scanner = new Scanner(System.in);
-        name = app.scanner.next();
+        name = App.getScanner().next();
         System.out.println("Hello, " + name + "!");
 
         //scanner.close();

@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.app;
+import hexlet.code.App;
 import hexlet.code.Cli;
 
 import java.util.Random;
@@ -8,15 +8,23 @@ import java.util.Random;
 public class Progression {
     public  static  void getProgression() {
         Random rnd = new Random();
+        int iterationsCount = 3;
+        int minBoundOf1stNumber = 50;
+        int minStep = 1; // Включительно
+        int maxStep = 11; // Не включительно
+        int minStepCount = 5; // Включительно
+        int maxStepCount = 11; // Не включительно
+
+
+
         System.out.println("What number is missing in the progression?");
 
-
-        for (int j = 0; j < 3; j++) {
+        for (int j = 0; j < iterationsCount; j++) {
             System.out.print("Question: ");
-            int firstNumber = rnd.nextInt(50);
+            int firstNumber = rnd.nextInt(minBoundOf1stNumber);
             int trueAnswer = 0;
-            int step = rnd.nextInt(10) + 1;
-            int stepCount = rnd.nextInt(6) + 5;
+            int step = rnd.nextInt(maxStep - minStep) + minStep;
+            int stepCount = rnd.nextInt(maxStepCount - minStepCount) + minStepCount;
             int missNumber = rnd.nextInt(stepCount);
             for (int i = 0; i < stepCount; i++) {
                 if (i == missNumber) {
@@ -31,7 +39,7 @@ public class Progression {
             System.out.println();
             System.out.print("Your answer: ");
 
-            String answer = app.scanner.next();
+            String answer = App.getScanner().next();
             try {
                 Integer.parseInt(answer);
             } catch (NumberFormatException e) {

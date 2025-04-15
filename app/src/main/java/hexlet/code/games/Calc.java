@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.app;
+import hexlet.code.App;
 import hexlet.code.Cli;
 
 import  java.util.Random;
@@ -10,22 +10,25 @@ public class Calc {
         Random rand = new Random();
 
         System.out.println("What is the result of the expression?");
-
+        var iterationsCount = 3;
+        var maxBound = 100;
         int firstNumber;
         int secondNumber;
+        int actionNumber = 3;
         enum Action {
             plus,
             minus,
             multiply
         }
 
-        for (int i = 0; i < 3; i++) {
-            firstNumber = rand.nextInt(100);
-            secondNumber = rand.nextInt(100);
-            Action action = Action.values()[rand.nextInt(3)];
+        for (int i = 0; i < iterationsCount; i++) {
+            firstNumber = rand.nextInt(maxBound);
+            secondNumber = rand.nextInt(maxBound);
+            Action action = Action.values()[rand.nextInt(actionNumber)];
             int result = 0;
 
             String strAction = "";
+
             switch (action) {
                 case Action.plus:
                     strAction = "+";
@@ -47,9 +50,8 @@ public class Calc {
                     break;
             }
             System.out.println("Question: " + firstNumber + " " + strAction + " " + secondNumber);
-            //System.out.println(" = " + result);
             System.out.print("Your answer: ");
-            int answer = app.scanner.nextInt();
+            int answer = App.getScanner().nextInt();
 
             if (answer == result) {
                 System.out.println("Correct!");
