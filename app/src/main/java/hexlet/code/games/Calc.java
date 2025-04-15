@@ -14,7 +14,7 @@ public class Calc {
         final var maxBound = 100;
         int firstNumber;
         int secondNumber;
-        int actionNumber = 3;
+        final int actionNumber = 3;
         enum Action {
             plus,
             minus,
@@ -40,8 +40,8 @@ public class Calc {
                     break;
                 case  Action.multiply:
                     strAction = "*";
-                    int minValue = 3;
-                    int maxValue = 10;
+                    final int minValue = 3;
+                    final int maxValue = 10;
                     firstNumber = rand.nextInt(maxValue - minValue + 1) + minValue;
                     secondNumber = rand.nextInt(maxValue - minValue + 1) + minValue;
                     result = firstNumber * secondNumber;

@@ -9,20 +9,21 @@ import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
 public class App {
-    private static final Scanner scanner = new Scanner(System.in);
+    private static final Scanner SCANNER = new Scanner(System.in);
 
     public static Scanner getScanner() {
-        return  scanner;
+        return SCANNER;
     }
 
-    static int greet = 1;
-    static int even = 2;
-    static int calc = 3;
-    static int gCD = 4;
-    static int progression = 5;
-    static int prime = 6;
-
     public static void main(String[] args) {
+
+        final int greet = 1;
+        final int even = 2;
+        final int calc = 3;
+        final int gCD = 4;
+        final int progression = 5;
+        final int prime = 6;
+
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
@@ -34,8 +35,8 @@ public class App {
 
         System.out.print("Your choice: ");
 
-        if (scanner.hasNextInt()) {
-            int number = scanner.nextInt();
+        if (SCANNER.hasNextInt()) {
+            int number = SCANNER.nextInt();
             System.out.println();
 
             if (number == greet) {
