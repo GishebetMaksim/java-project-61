@@ -1,21 +1,18 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
-import hexlet.code.Cli;
+import hexlet.code.Engine;
 
 public class Prime {
     public static void simpleNumber() {
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        String exercise = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        var questions = new String[Engine.getIterationsCount()];
+        var trueAnswers = new String[Engine.getIterationsCount()];
         final int max = 200;
         final int min = 2;
-        final int iterationsCount = 3;
 
-        for (int j = 0; j < iterationsCount; j++) {
+        for (int j = 0; j < Engine.getIterationsCount(); j++) {
             int question = (int) ((Math.random() * ((max - min) + 1)) + min);
-
-            System.out.println("Question: " + question);
-            System.out.print("Your answer: ");
-            String answer = App.getScanner().next();
+            questions[j] = String.valueOf(question);
 
             boolean isSimple = true;
 
@@ -26,15 +23,8 @@ public class Prime {
                 }
             }
 
-            if ((answer.equals("yes") && isSimple) || (answer.equals("no") && !isSimple)) {
-                System.out.println("Correct!");
-            } else {
-                String trueAnswer = isSimple ? "yes" : "no";
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + trueAnswer + "'.");
-                System.out.println("Let's try again, " + Cli.getName() + "!");
-                return;
-            }
+            trueAnswers[j] = isSimple ? "yes" : "no";
         }
-        System.out.println("Congratulations, " + Cli.getName() + "!");
+        Engine.game(exercise, questions, trueAnswers);
     }
 }

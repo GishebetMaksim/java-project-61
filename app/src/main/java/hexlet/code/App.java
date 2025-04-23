@@ -39,29 +39,27 @@ public class App {
             int number = SCANNER.nextInt();
             System.out.println();
 
-            if (number == greet) {
+            if(number >= greet && number <= prime) {
                 System.out.println("Welcome to the Brain Games!");
                 Cli.greeting();
-            } else if (number == even) {
-                System.out.println("Welcome to the Brain Games!");
-                Cli.greeting();
-                Even.gameEven();
-            } else if (number == calc) {
-                System.out.println("Welcome to the Brain Games!");
-                Cli.greeting();
-                Calc.gameCalc();
-            } else if (number == gCD) {
-                System.out.println("Welcome to the Brain Games!");
-                Cli.greeting();
-                GCD.getGCD();
-            } else if (number == progression) {
-                System.out.println("Welcome to the Brain Games!");
-                Cli.greeting();
-                Progression.getProgression();
-            } else if (number == prime) {
-                System.out.println("Welcome to the Brain Games!");
-                Cli.greeting();
-                Prime.simpleNumber();
+            }
+
+            switch (number) {
+                case even:
+                    Even.gameEven();
+                    break;
+                case calc:
+                    Calc.gameCalc();
+                    break;
+                case gCD:
+                    GCD.getGCD();
+                    break;
+                case progression:
+                    Progression.getProgression();
+                    break;
+                case prime:
+                    Prime.simpleNumber();
+                    break;
             }
         }
     }

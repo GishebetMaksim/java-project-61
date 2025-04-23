@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
-import hexlet.code.Cli;
+import hexlet.code.Engine;
 
 import  java.util.Random;
 
@@ -9,8 +8,10 @@ public class Calc {
     public static void gameCalc() {
         Random rand = new Random();
 
-        System.out.println("What is the result of the expression?");
-        final var iterationsCount = 3;
+        String exercise = "What is the result of the expression?";
+        var questions = new String[Engine.getIterationsCount()];
+        var trueAnswers = new String[Engine.getIterationsCount()];
+
         final var maxBound = 100;
         int firstNumber;
         int secondNumber;
@@ -21,7 +22,7 @@ public class Calc {
             multiply
         }
 
-        for (int i = 0; i < iterationsCount; i++) {
+        for (int i = 0; i < Engine.getIterationsCount(); i++) {
             firstNumber = rand.nextInt(maxBound);
             secondNumber = rand.nextInt(maxBound);
             Action action = Action.values()[rand.nextInt(actionNumber)];
@@ -49,18 +50,10 @@ public class Calc {
                 default:
                     break;
             }
-            System.out.println("Question: " + firstNumber + " " + strAction + " " + secondNumber);
-            System.out.print("Your answer: ");
-            int answer = App.getScanner().nextInt();
 
-            if (answer == result) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + result + "'");
-                System.out.println("Let's try again, " + Cli.getName() + "!");
-                return;
-            }
+            questions[i] = firstNumber + " " + strAction + " " + secondNumber;
+            trueAnswers[i] = String.valueOf(result);
         }
-        System.out.println("Congratulations, " + Cli.getName() + "!");
+        Engine.game(exercise, questions, trueAnswers);
     }
 }
