@@ -39,7 +39,7 @@ public class App {
             int number = SCANNER.nextInt();
             System.out.println();
 
-            if(number >= greet && number <= prime) {
+            if (number >= greet && number <= prime) {
                 System.out.println("Welcome to the Brain Games!");
                 Cli.greeting();
             }
@@ -59,6 +59,8 @@ public class App {
                     break;
                 case prime:
                     Prime.simpleNumber();
+                    break;
+                default:
                     break;
             }
         }
