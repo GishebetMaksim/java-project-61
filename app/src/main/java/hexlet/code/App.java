@@ -39,12 +39,10 @@ public class App {
             int number = SCANNER.nextInt();
             System.out.println();
 
-            if (number >= greet && number <= prime) {
-                System.out.println("Welcome to the Brain Games!");
-                Cli.greeting();
-            }
-
             switch (number) {
+                case greet:
+                    Cli.greeting();
+                    break;
                 case even:
                     Even.gameEven();
                     break;
@@ -61,6 +59,7 @@ public class App {
                     Prime.simpleNumber();
                     break;
                 default:
+                    System.out.println("Incorrect number selected");
                     break;
             }
         }

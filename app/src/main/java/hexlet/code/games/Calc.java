@@ -1,59 +1,77 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
+import javax.swing.*;
 import  java.util.Random;
 
 public class Calc {
+    private final static String EXERCISE = "What is the result of the expression?";
+    private final static int MAX_BOUND = 100;
+    private final static int ACTION_NUMBER = 3;
+
+    enum Action {
+        plus,
+        minus,
+        multiply
+    }
+
     public static void gameCalc() {
-        Random rand = new Random();
+        //Random rand = new Random();
 
-        String exercise = "What is the result of the expression?";
-        var questions = new String[Engine.getIterationsCount()];
-        var trueAnswers = new String[Engine.getIterationsCount()];
+        String[][] questionAnswer = new String[Engine.getIterationsCount()][2];
 
-        final var maxBound = 100;
         int firstNumber;
         int secondNumber;
-        final int actionNumber = 3;
-        enum Action {
-            plus,
-            minus,
-            multiply
-        }
 
         for (int i = 0; i < Engine.getIterationsCount(); i++) {
-            firstNumber = rand.nextInt(maxBound);
-            secondNumber = rand.nextInt(maxBound);
-            Action action = Action.values()[rand.nextInt(actionNumber)];
-            int result = 0;
+            firstNumber = Utils.randomNumberInRange(0, MAX_BOUND);
+            secondNumber = Utils.randomNumberInRange(0, MAX_BOUND);
+            Action action = Action.values()[Utils.randomNumberInRange(0, ACTION_NUMBER)];
 
             String strAction = "";
 
             switch (action) {
                 case Action.plus:
                     strAction = "+";
-                    result = firstNumber + secondNumber;
                     break;
                 case Action.minus:
                     strAction = "-";
-                    result = firstNumber - secondNumber;
                     break;
                 case  Action.multiply:
                     strAction = "*";
-                    final int minValue = 3;
-                    final int maxValue = 10;
-                    firstNumber = rand.nextInt(maxValue - minValue + 1) + minValue;
-                    secondNumber = rand.nextInt(maxValue - minValue + 1) + minValue;
-                    result = firstNumber * secondNumber;
+                    final int minValue = 3;  // Для умножения числа меньше, чем для сложения и вычитания
+                    final int maxValue = 11;
+                    firstNumber = Utils.randomNumberInRange(minValue, maxValue);
+                    secondNumber = Utils.randomNumberInRange(minValue, maxValue);;
                     break;
                 default:
                     break;
             }
 
-            questions[i] = firstNumber + " " + strAction + " " + secondNumber;
-            trueAnswers[i] = String.valueOf(result);
+            questionAnswer[i][0] = firstNumber + " " + strAction + " " + secondNumber;
+            questionAnswer[i][1] = String.valueOf(calc(firstNumber, secondNumber, action));
         }
-        Engine.game(exercise, questions, trueAnswers);
+        Engine.game(EXERCISE, questionAnswer);
+    }
+
+    static int calc(int num1, int num2, Action action) {
+        int result = 0;
+
+        switch (action) {
+            case Action.plus:
+                result = num1 + num2;
+                break;
+            case Action.minus:
+                result = num1 - num2;
+                break;
+            case  Action.multiply:
+                result = num1 * num2;
+                break;
+            default:
+                break;
+        }
+        return  result;
     }
 }

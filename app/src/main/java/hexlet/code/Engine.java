@@ -6,18 +6,22 @@ public class Engine {
         return ITERATIONS_COUNT;
     }
 
-    public  static void game(String exercise, String[] question, String[] trueAnswer) {
+    public  static void game(String exercise, String[][] questionAnswer) {
+
+        System.out.println("Welcome to the Brain Games!");
+        Cli.greeting();
+
         System.out.println(exercise);
 
         for (int i = 0; i < ITERATIONS_COUNT; i++) {
-            System.out.println("Question: " + question[i]);
+            System.out.println("Question: " + questionAnswer[i][0]);
             System.out.print("Your answer: ");
             var answer = App.getScanner().next();
 
-            if (answer.equals(trueAnswer[i])) {
+            if (answer.equals(questionAnswer[i][1])) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + trueAnswer[i] + "'.");
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + questionAnswer[i][1] + "'.");
                 System.out.println("Let's try again, " + Cli.getName() + "!");
                 return;
             }

@@ -1,43 +1,42 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.Random;
 
 public class GCD {
+    private final static String EXERCISE = "Find the greatest common divisor of given numbers.";
+    private final static int MAX_BOUND = 100;
+    private final static int MIN_BOUND  = 1;
+
     public  static void getGCD() {
-        String exercise = "Find the greatest common divisor of given numbers.";
-        var questions = new String[Engine.getIterationsCount()];
-        var trueAnswers = new String[Engine.getIterationsCount()];
-
-        Random rand = new Random();
-
-        final int maxBound = 100;
-        final int minBound = 1;
+        String[][] questionAnswer = new String[Engine.getIterationsCount()][2];
 
         for (int i = 0; i < Engine.getIterationsCount(); i++) {
-            int a = rand.nextInt(maxBound) + minBound;
-            int b = rand.nextInt(maxBound) + minBound;
-            int gcd = 1;
+            int a = Utils.randomNumberInRange(MIN_BOUND, MAX_BOUND);
+            int b = Utils.randomNumberInRange(MIN_BOUND, MAX_BOUND);
 
-            questions[i] = a + " " + b;
-
-            int max = Math.max(a, b);
-            int min = Math.min(a, b);
-            int remains = 1;
-
-            while (remains > 0) {
-                remains = max % min;
-                if (remains == 0) {
-                    gcd = min;
-                    break;
-                }
-                max = min;
-                min = remains;
-            }
-
-            trueAnswers[i] = String.valueOf(gcd);
+            questionAnswer[i][0] = a + " " + b;
+            questionAnswer[i][1] = String.valueOf(gcd(a, b));
         }
-        Engine.game(exercise, questions, trueAnswers);
+        Engine.game(EXERCISE, questionAnswer);
+    }
+
+    static int gcd(int num1, int num2) {
+        int max = Math.max(num1, num2);
+        int min = Math.min(num1, num2);
+        int remains = 1;
+        int gcd = 1;
+        while (remains > 0) {
+            remains = max % min;
+            if (remains == 0) {
+                gcd = min;
+                break;
+            }
+            max = min;
+            min = remains;
+        }
+        return gcd;
     }
 }

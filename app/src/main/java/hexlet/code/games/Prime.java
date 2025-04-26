@@ -1,30 +1,33 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Prime {
+    private final static String EXERCISE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private final static int MAX = 200;
+    private final static int MIN = 2;
+
     public static void simpleNumber() {
-        String exercise = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        var questions = new String[Engine.getIterationsCount()];
-        var trueAnswers = new String[Engine.getIterationsCount()];
-        final int max = 200;
-        final int min = 2;
+        String[][] questionAnswer = new String[Engine.getIterationsCount()][2];
 
         for (int j = 0; j < Engine.getIterationsCount(); j++) {
-            int question = (int) ((Math.random() * ((max - min) + 1)) + min);
-            questions[j] = String.valueOf(question);
-
-            boolean isSimple = true;
-
-            for (int i = 2; i <= question / 2; i++) {
-                if (question % i == 0) {
-                    isSimple = false;
-                    break;
-                }
-            }
-
-            trueAnswers[j] = isSimple ? "yes" : "no";
+            int question = Utils.randomNumberInRange(MAX, MIN);
+            questionAnswer[j][0] = String.valueOf(question);
+            questionAnswer[j][1] = isSimple(question) ? "yes" : "no";
         }
-        Engine.game(exercise, questions, trueAnswers);
+        Engine.game(EXERCISE, questionAnswer);
+    }
+
+    static boolean isSimple(int number) {
+        if (number < 2) {
+            return false;
+        }
+        for (int i = 2; i <= number / 2; i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
