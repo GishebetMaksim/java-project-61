@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import javax.swing.*;
-import  java.util.Random;
 
 public class Calc {
     private final static String EXERCISE = "What is the result of the expression?";
@@ -44,7 +42,7 @@ public class Calc {
                     final int minValue = 3;  // Для умножения числа меньше, чем для сложения и вычитания
                     final int maxValue = 11;
                     firstNumber = Utils.randomNumberInRange(minValue, maxValue);
-                    secondNumber = Utils.randomNumberInRange(minValue, maxValue);;
+                    secondNumber = Utils.randomNumberInRange(minValue, maxValue);
                     break;
                 default:
                     break;
