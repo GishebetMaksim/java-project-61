@@ -12,7 +12,7 @@ public class Prime {
         String[][] questionAnswer = new String[Engine.getIterationsCount()][2];
 
         for (int j = 0; j < Engine.getIterationsCount(); j++) {
-            int question = Utils.randomNumberInRange(MAX, MIN);
+            int question = Utils.randomNumberInRange(MIN, MAX);
             questionAnswer[j][0] = String.valueOf(question);
             questionAnswer[j][1] = isSimple(question) ? "yes" : "no";
         }
