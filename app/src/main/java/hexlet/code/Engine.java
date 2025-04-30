@@ -7,8 +7,6 @@ public class Engine {
     }
 
     public  static void game(String exercise, String[][] questionAnswer) {
-
-        System.out.println("Welcome to the Brain Games!");
         Cli.greeting();
 
         System.out.println(exercise);
