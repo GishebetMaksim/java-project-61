@@ -3,15 +3,13 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.Random;
-
 public class Progression {
-    private final static String EXERCISE = "What number is missing in the progression?";
-    private final static int MIN_BOUND_OF_1ST_NUMBER = 50;
-    private final static int MIN_STEP = 1; // Включительно
-    private final static int MAX_STEP = 11; // Не включительно
-    private final static int MIN_STEP_COUNT = 5; // Включительно
-    private final static int MAX_STEP_COUNT = 11; // Не включительно
+    private static final String EXERCISE = "What number is missing in the progression?";
+    private static final int MIN_BOUND_OF_1ST_NUMBER = 50;
+    private static final int MIN_STEP = 1; // Включительно
+    private static final int MAX_STEP = 11; // Не включительно
+    private static final int MIN_STEP_COUNT = 5; // Включительно
+    private static final int MAX_STEP_COUNT = 11; // Не включительно
 
     public  static  void getProgression() {
         String[][] questionAnswer = new String[Engine.getIterationsCount()][2];

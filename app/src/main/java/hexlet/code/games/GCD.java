@@ -3,12 +3,10 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.Random;
-
 public class GCD {
-    private final static String EXERCISE = "Find the greatest common divisor of given numbers.";
-    private final static int MAX_BOUND = 100;
-    private final static int MIN_BOUND  = 1;
+    private static final String EXERCISE = "Find the greatest common divisor of given numbers.";
+    private static final int MAX_BOUND = 100;
+    private static final int MIN_BOUND  = 1;
 
     public  static void getGCD() {
         String[][] questionAnswer = new String[Engine.getIterationsCount()][2];

@@ -5,9 +5,9 @@ import hexlet.code.Utils;
 
 
 public class Calc {
-    private final static String EXERCISE = "What is the result of the expression?";
-    private final static int MAX_BOUND = 100;
-    private final static int ACTION_NUMBER = 3;
+    private static final String EXERCISE = "What is the result of the expression?";
+    private static final int MAX_BOUND = 100;
+    private static final int ACTION_NUMBER = 3;
 
     enum Action {
         plus,

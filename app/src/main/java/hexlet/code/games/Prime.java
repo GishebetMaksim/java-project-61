@@ -4,9 +4,9 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Prime {
-    private final static String EXERCISE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    private final static int MAX = 200;
-    private final static int MIN = 2;
+    private static final String EXERCISE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private static final int MAX = 200;
+    private static final int MIN = 2;
 
     public static void simpleNumber() {
         String[][] questionAnswer = new String[Engine.getIterationsCount()][2];
