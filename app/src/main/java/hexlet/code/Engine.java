@@ -7,7 +7,11 @@ public class Engine {
     }
 
     public  static void game(String exercise, String[][] questionAnswer) {
-        Cli.greeting();
+        String name;
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        name = App.getScanner().next();
+        System.out.println("Hello, " + name + "!");
 
         System.out.println(exercise);
 
@@ -21,10 +25,10 @@ public class Engine {
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
                         + questionAnswer[i][1] + "'.");
-                System.out.println("Let's try again, " + Cli.getName() + "!");
+                System.out.println("Let's try again, " + name + "!");
                 return;
             }
         }
-        System.out.println("Congratulations, " + Cli.getName() + "!");
+        System.out.println("Congratulations, " + name + "!");
     }
 }

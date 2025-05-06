@@ -17,12 +17,14 @@ public class App {
 
     public static void main(String[] args) {
 
+        final int exit = 0;
         final int greet = 1;
         final int even = 2;
         final int calc = 3;
         final int gCD = 4;
         final int progression = 5;
         final int prime = 6;
+
 
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
@@ -41,7 +43,11 @@ public class App {
 
             switch (number) {
                 case greet:
-                    Cli.greeting();
+                    String name;
+                    System.out.println("Welcome to the Brain Games!");
+                    System.out.print("May I have your name? ");
+                    name = App.getScanner().next();
+                    System.out.println("Hello, " + name + "!");
                     break;
                 case even:
                     Even.gameEven();
@@ -57,6 +63,8 @@ public class App {
                     break;
                 case prime:
                     Prime.simpleNumber();
+                    break;
+                case exit:
                     break;
                 default:
                     System.out.println("Incorrect number selected");
